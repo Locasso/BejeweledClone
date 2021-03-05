@@ -1,0 +1,28 @@
+Para fins de teste, foram anexadas duas imagens na pasta:
+Anexo1 -> Mostra a configuração do script em cena, com os valores default utilizados, caso os mesmos percam sua referência.
+Anexo2 -> O projeto foi montado no aspect ratio conforme o anexo, 9:16, em posição Portrait, e portanto é a melhor resolução para os testes do mesmo.
+
+
+Componentes do projeto:
+
+Scripts:
+BejeweledManager.cs -> Script que, que contém condensado todas as classes e estrutura em código do projeto, para facilitar a visualização e testes.
+
+Arte:
+gem_set -> Sprite sheet com os sprites utilizados no jogo, onde foi cortado na configuração "multiple" e delegado na hierarquia os que estão em uso.
+
+logo-gazeus -> Logo da Gazeus para ilustração no projeto.
+
+Scene:
+GameScene -> Única e principal cena do jogo.
+
+Prefab:
+Canvas -> Contém toda a estrutura visual da cena.
+
+
+Credits:
+Development by:  Gabriel Loçasso
+
+Art Sprite Sheet by:  Krasi Wasile(https://freegameassets.blogspot.com)
+
+Gazeus logo taken from: https://s3.amazonaws.com/staticdev.gazeus.com/assets/img/logo-gazeus.png?v=1614879299338
