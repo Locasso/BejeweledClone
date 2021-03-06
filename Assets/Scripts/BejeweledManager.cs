@@ -17,18 +17,18 @@ public class BejeweledManager : MonoBehaviour
 	public static event AvoidClick OnAvoidClick;
 
 	[Header("References")]
-	[SerializeField] GameObject gridParent; //Referência do objeto pai do grid, que contém todos os nodes/gemas.
+	GameObject gridParent; //Referência do objeto pai do grid, que contém todos os nodes/gemas.
 	[SerializeField] Sprite[] spriteColorSheet; //Referência para o array de sprites, que definirá a imagem de cada gema.
-	[SerializeField] Text scoreValue; //Referência para o texto de score.
+	Text scoreValue; //Referência para o texto de score.
 	public static BejeweledManager instance; //Instância singleton da classe BejeweledManager.
 	GameObject bejeweledObj; //Referência inicial para o modelo de cada objeto gema.
 
 	[Header("Control")]
-	[SerializeField] int widhtGrid; //quantidade de linhas e de colunas do grid, respectivamente.
-	[SerializeField] int heightGrid; //quantidade de linhas e de colunas do grid, respectivamente.
-	[SerializeField] Button firstButton, secondButton; //Referência para cada botão que definirá uma troca no grid.
+	int widhtGrid; //quantidade de linhas e de colunas do grid, respectivamente.
+	int heightGrid; //quantidade de linhas e de colunas do grid, respectivamente.
+	Button firstButton, secondButton; //Referência para cada botão que definirá uma troca no grid.
 	int numberGrid; //Recebe o tamanho total de nodes do grid.
-	public short hasMatch; //Short que controla o loop de matchs, contando enquanto houver possibilidades de match.
+	short hasMatch; //Short que controla o loop de matchs, contando enquanto houver possibilidades de match.
 	public static List<GameObject> objMatched = new List<GameObject>(); //Lista estática que guarda todos os objetos que participaram de um match.
 
 	[Header("Temporary Logic Parameters")]
@@ -38,8 +38,8 @@ public class BejeweledManager : MonoBehaviour
 	GameObject result; //Guarda o objeto encontrado ao fazer uma troca no grid.
 
 	[Header("Parameters to control spawn")]
-	public Selectable lastObj; //Utilizado para controlar a repetição de cores no spawn.
-	public Selectable downObj; //Utilizado para controlar a repetição de cores no spawn.
+	Selectable lastObj; //Utilizado para controlar a repetição de cores no spawn.
+	Selectable downObj; //Utilizado para controlar a repetição de cores no spawn.
 
 	public int WidhtGrid { get => widhtGrid; set => widhtGrid = value; }
 	public int HeightGrid { get => heightGrid; set => heightGrid = value; }
@@ -47,6 +47,8 @@ public class BejeweledManager : MonoBehaviour
 
 	void Start()
 	{
+		widhtGrid = 8;
+		heightGrid = 8;
 		instance = GetComponent<BejeweledManager>();
 		scoreValue = GameObject.Find("score_value").GetComponent<Text>();
 		gridParent = FindObjectOfType<GridLayoutGroup>().gameObject;
